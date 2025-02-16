@@ -17,12 +17,40 @@ import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
 
 const userSchema = new mongoose.Schema({
-  username: { type: String, required: true, unique: true },
-  email: { type: String, required: true, unique: true },
-  password: { type: String, required: true },
-  gender: { type: String, required: true, enum: ["Male", "Female", "Other"] },
-  preferredGender: { type: String, required: true, enum: ["Male", "Female", "Other"] },
-  isAdmin: { type: Boolean, default: false }, // Add this field
+  username: { 
+    type: String, 
+    required: true, 
+    unique: true 
+  },
+  email: { 
+    type: String, 
+    required: true, 
+    unique: true 
+  },
+  password: { 
+    type: String, 
+    required: true 
+  },
+  gender: { 
+    type: String, 
+    required: true, 
+    enum: ["Male", "Female", "Other"] 
+    
+  },
+  preferredGender: { 
+    type: String, 
+    required: true, 
+    enum: ["Male", "Female", "Other"] 
+  },
+  isAdmin: { 
+    type: Boolean, 
+    default: false 
+    
+  }, // Add this field
+  profilePhoto:{
+    type: String
+  },
+  // URL to the profile photo
 }, { timestamps: true });
 
 // Hash password before saving

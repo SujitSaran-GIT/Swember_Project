@@ -7,7 +7,10 @@ import About from './pages/About';
 import Discoveries from './pages/Discoveries';
 import Events from './pages/Events';
 import SignUp from './pages/SignUp';
+import SurveyForm from './pages/SurveyForm';
 import { ToastContainer } from 'react-toastify';
+import SignIn from './pages/SignIn';
+import ProfilePhotoUpload from './components/ProfilePhotoUpload';
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
         <Route path="/discoveries" element={<Discoveries />} />
         <Route path="/events" element={<Events />} />
         <Route path='/signup' element={<SignUp/>}/>
+        <Route path='/signin' element={<SignIn/>}/>
+        <Route path='/profilepic' element={<ProfilePhotoUpload/>}/>
+        <Route path="/survey" element={<SurveyForm/>}/>
       </Routes>
     </Router>
     </>

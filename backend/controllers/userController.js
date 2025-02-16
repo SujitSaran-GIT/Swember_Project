@@ -56,7 +56,7 @@ const signup = async (req, res) => {
     await user.save();
 
     // Generate JWT token
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '30d' });
 
     res.status(201).json({ token, user: { id: user._id, username, email, gender, preferredGender, isAdmin } });
   } catch (error) {
@@ -82,7 +82,7 @@ const login = async (req, res) => {
     }
 
     // Generate JWT token
-    const token = jwt.sign({ id: user._id, isAdmin: user.isAdmin }, process.env.JWT_SECRET, { expiresIn: '1h' });
+    const token = jwt.sign({ id: user._id, isAdmin: user.isAdmin }, process.env.JWT_SECRET, { expiresIn: '30d' });
 
     res.status(200).json({ token, user: { id: user._id, username: user.username, email: user.email, gender: user.gender, preferredGender: user.preferredGender } });
   } catch (error) {

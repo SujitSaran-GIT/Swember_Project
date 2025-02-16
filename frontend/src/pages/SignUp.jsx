@@ -62,7 +62,7 @@ const SignUp = () => {
             console.log('User registered:', response.data);
             toast.success('Sign Up Successful!');
             setTimeout(() => {
-                navigate("/login");  // Redirect after successful signup
+                navigate("/signin");  // Redirect after successful signup
             }, 2000); 
         } catch (error) {
             console.error('Error registering user:', error.response?.data || error.message);
