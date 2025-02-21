@@ -11,24 +11,30 @@ import SurveyForm from './pages/SurveyForm';
 import { ToastContainer } from 'react-toastify';
 import SignIn from './pages/SignIn';
 import ProfilePhotoUpload from './components/ProfilePhotoUpload';
+import Footer from './components/Footer';
+import { DarkModeProvider } from './contexts/DarkModeContext';
 
 function App() {
   return (
     <>
-    <ToastContainer position='top-right' autoClose={3000}/>
-    <Router>
-      <NavigationBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/discoveries" element={<Discoveries />} />
-        <Route path="/events" element={<Events />} />
-        <Route path='/signup' element={<SignUp/>}/>
-        <Route path='/signin' element={<SignIn/>}/>
-        <Route path='/profilepic' element={<ProfilePhotoUpload/>}/>
-        <Route path="/survey" element={<SurveyForm/>}/>
-      </Routes>
-    </Router>
+    <DarkModeProvider>
+
+      <ToastContainer position='top-right' autoClose={3000}/>
+      <Router>
+        <NavigationBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/discoveries" element={<Discoveries />} />
+          <Route path="/events" element={<Events />} />
+          <Route path='/signup' element={<SignUp/>}/>
+          <Route path='/signin' element={<SignIn/>}/>
+          <Route path='/profilepic' element={<ProfilePhotoUpload/>}/>
+          <Route path="/survey" element={<SurveyForm/>}/>
+        </Routes>
+        <Footer/>
+      </Router>
+    </DarkModeProvider>
     </>
   );
 }

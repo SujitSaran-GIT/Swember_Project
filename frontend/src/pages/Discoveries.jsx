@@ -10,3 +10,4 @@ const Discoveries = () => {
 };
 
 export default Discoveries;
+
