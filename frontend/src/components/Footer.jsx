@@ -220,7 +220,7 @@ function Footer() {
   }
 
   return (
-    <div className={`${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-black'} shadow-lg`}>
+    <div className={`${darkMode ? 'bg-gradient-to-r from-orange-200 to-gray-800 text-white' : 'bg-gradient-to-r from-orange-200 to-rose-300 text-black'} shadow-lg`}>
       <footer className="px-5 py-5">
         <div className="grid md:flex md:flex-row md:justify-around">
           {/* Left Section */}
